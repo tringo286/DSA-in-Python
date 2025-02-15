@@ -1,6 +1,8 @@
 # Logarithmic time O(log n)
 
-# With each step, the number of elements remaining in the search space is halved. The number of iterations is proportional to the number of times the array can be halved, which is about log₂(n). Therefore, the time complexity is O(log n).
+# With each step, the number of elements remaining in the search space is halved. 
+# The number of iterations is proportional to the number of times the array can be halved, 
+# which is about log₂(n). Therefore, the time complexity is O(log n).
 
 def binary_search(arr, target):
     # This function performs binary search, which has a time complexity of O(log n)

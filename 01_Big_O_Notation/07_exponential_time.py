@@ -1,6 +1,7 @@
 # Exponential time O(2^n)
 
-# This recursive function makes two calls for each n. Each call branches into two more calls, doubling the work at each level. This results in exponential growth, with time complexity O(2^n).
+# This recursive function makes two calls for each n. Each call branches into two more calls, 
+# doubling the work at each level. This results in exponential growth, with time complexity O(2^n).
 
 def exponential_time_example(n):
     # This function has exponential time complexity, O(2^n)

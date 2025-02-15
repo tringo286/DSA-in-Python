@@ -1,6 +1,7 @@
 # Linear time (O(n))
 
-# The function iterates through each element in the array once. The time taken grows linearly with the size of the input (n), so the time complexity is O(n).
+# The function iterates through each element in the array once. 
+# The time taken grows linearly with the size of the input (n), so the time complexity is O(n).
 
 def linear_time_example(arr):
     # This function runs in linear time, O(n)

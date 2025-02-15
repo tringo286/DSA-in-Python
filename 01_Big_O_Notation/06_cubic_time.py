@@ -1,6 +1,7 @@
 # Cubic time O(n^3)
 
-# There are three nested loops, each iterating through the array. Each loop runs up to n times, resulting in O(n * n * n) = O(n^3) time complexity.
+# There are three nested loops, each iterating through the array. 
+# Each loop runs up to n times, resulting in O(n * n * n) = O(n^3) time complexity.
 
 def cubic_time_example(arr):
     # This function has cubic time complexity, O(n^3)

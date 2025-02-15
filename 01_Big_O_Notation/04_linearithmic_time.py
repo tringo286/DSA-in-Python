@@ -1,6 +1,7 @@
 # Linearithmic time O(n log n)
 
-# Merge sort splits the array in half recursively (log n), and then merges the halves in linear time (n). Thus, the overall time complexity is O(n log n).
+# Merge sort splits the array in half recursively (log n), and then merges the halves in linear time (n). 
+# Thus, the overall time complexity is O(n log n).
 
 def merge_sort(arr):
     # Merge Sort is an O(n log n) algorithm

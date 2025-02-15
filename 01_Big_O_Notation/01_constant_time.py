@@ -1,6 +1,7 @@
 # Constant time (O(1))
 
-# The operation arr[0] accesses the first element of the array directly, regardless of the array's size. It takes a constant amount of time, so the time complexity is O(1).
+# The operation arr[0] accesses the first element of the array directly, regardless of the array's size. 
+# It takes a constant amount of time, so the time complexity is O(1).
 
 def constant_time_example(arr):
     # This function runs in constant time, O(1)

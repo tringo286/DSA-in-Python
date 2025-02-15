@@ -1,6 +1,7 @@
 # Quadratic time O(n^2)
 
-# There are two nested loops: the outer loop runs n times, and for each iteration of the outer loop, the inner loop runs up to n times. This results in O(n * n) = O(n^2) time complexity.
+# There are two nested loops: the outer loop runs n times, and for each iteration of the outer loop, 
+# the inner loop runs up to n times. This results in O(n * n) = O(n^2) time complexity.
 
 def quadratic_time_example(arr):
     # This function has quadratic time complexity, O(n^2)

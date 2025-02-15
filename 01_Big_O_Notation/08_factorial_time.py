@@ -1,6 +1,7 @@
 # Factorial time O(n!)
 
-# The function generates all permutations of the array. The number of permutations of n items is n! (factorial), which means the time complexity is O(n!).
+# The function generates all permutations of the array. The number of permutations of n items is n! (factorial), 
+# which means the time complexity is O(n!).
 
 def factorial_time_example(n):
     # This function has factorial time complexity, O(n!)
