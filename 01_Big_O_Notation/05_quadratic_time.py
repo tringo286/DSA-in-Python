@@ -15,3 +15,4 @@ def quadratic_time_example(arr):
 arr = [1, 2, 3, 4]
 result = quadratic_time_example(arr)
 print(f"Quadratic Time Example: {result}")
+# Quadratic Time Example: [(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]

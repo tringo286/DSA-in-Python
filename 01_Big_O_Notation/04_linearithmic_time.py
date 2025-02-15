@@ -38,4 +38,5 @@ def merge_sort(arr):
 # Test the merge_sort function
 arr = [12, 11, 13, 5, 6, 7]
 result = merge_sort(arr)
-print(f"Linearithmic Time Example: {result}")
+print(f"Linearithmic Time Example: {result}") 
+# Linearithmic Time Example: [5, 6, 7, 11, 12, 13]

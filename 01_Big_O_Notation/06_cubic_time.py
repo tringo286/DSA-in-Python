@@ -15,4 +15,4 @@ def cubic_time_example(arr):
 # Test the cubic_time_example
 arr = [1, 2, 3]
 result = cubic_time_example(arr)
-print(f"Cubic Time Example: {result}")
+print(f"Cubic Time Example: {result}") # Cubic Time Example: [(1, 2, 3)]

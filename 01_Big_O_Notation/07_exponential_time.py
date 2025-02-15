@@ -13,3 +13,4 @@ def exponential_time_example(n):
 n = 5
 result = exponential_time_example(n)
 print(f"Exponential Time Example: {result}")
+# Exponential Time Example: 16

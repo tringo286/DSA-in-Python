@@ -24,3 +24,4 @@ def factorial_time_example(n):
 n = 3
 result = factorial_time_example(n)
 print(f"Factorial Time Example: {result}")
+# Factorial Time Example: [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 2, 1], [3, 1, 2]]
