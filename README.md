@@ -7,7 +7,7 @@ Welcome to my **Data Structures and Algorithms (DSA) in Python** repository! Thi
 This repository will cover a wide range of topics, including but not limited to:
 
 - **Big O Notation**: Understanding the time and space complexity of algorithms.
-- **Arrays and Lists**: Exploring basic operations like searching, insertion, and deletion.
+- **Arrays**: Exploring basic operations like searching, insertion, and deletion.
 - **Linked Lists**: A more flexible data structure compared to arrays.
 - **Stacks and Queues**: Fundamental structures for specific algorithmic patterns.
 - **Trees**: Understanding binary trees, binary search trees, heaps, and tree traversals.
