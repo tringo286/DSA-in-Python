@@ -14,3 +14,4 @@ if __name__ == "__main__":
     # Add more operations or display the list as needed
 
 ll.print_list()
+# 20 -> 10 -> None
