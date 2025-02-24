@@ -14,8 +14,8 @@ class SinglyLinkedList:
     
     # Method to print the list
     def print_list(self):
-        current = self.head
-        while current:
-            print(current.data, end=" -> ")
-            current = current.next
-        print("None")  # To represent the end of the list
+        current = self.head  # Start with the head of the list
+        while current:  # Traverse the list while the current node is not None
+            print(current.data, end=" -> ")  # Print the data of the current node followed by '->'
+            current = current.next  # Move to the next node
+        print("None")  # Print "None" to indicate the end of the list
