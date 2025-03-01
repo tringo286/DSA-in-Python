@@ -19,3 +19,13 @@ class SinglyLinkedList:
             print(current.data, end=" -> ")  # Print the data of the current node followed by '->'
             current = current.next  # Move to the next node
         print("None")  # Print "None" to indicate the end of the list
+
+    def insert_at_end(ll, data):
+        new_node = Node(data)
+        if not ll.head:  # If the list is empty, make the new node the head
+            ll.head = new_node
+            return
+        last_node = ll.head
+        while last_node.next:  # Traverse to the last node
+            last_node = last_node.next
+        last_node.next = new_node  # Append the new node at the end
