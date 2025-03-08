@@ -18,5 +18,5 @@ if __name__ == "__main__":
     # Test the update function
     update_result = update_in_list(ll, 20, 25)  # Should return True
   
-    print('Before update:')
+    print('After update:')
     ll.print_list()
