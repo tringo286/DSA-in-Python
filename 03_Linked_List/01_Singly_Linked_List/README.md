@@ -10,4 +10,4 @@ A Singly Linked List is a linear data structure where each element (node) points
 - Delete elements by value or position.
 - Traverse the list and display its contents.
 - Search for an element in the list.
-- Check if the list is empty.
+- Update an element in the list.
