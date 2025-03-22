@@ -18,13 +18,15 @@ def insert_at_index(ll, data, index):
     while current is not None and current_index < index - 1:
         current = current.next
         current_index += 1
+  
+    # If current is None, the index is out of bounds
+    if current is None:
+        print("Index out of bounds")
+        return
     
-    # Step 4: If we reached the specified position, insert the new node
-    if current is not None:
-        new_node.next = current.next  # Point the new node to the next node at the given index
-        current.next = new_node       # Link the current node to the new node
-    else:
-        print(f"Index {index} is out of bounds.")  # If the index is invalid, print an error message
+    # Step :4 :Insert the new node at the desired index
+    new_node.next = current.next
+    current.next = new_node
 
 # Example usage
 if __name__ == "__main__":
