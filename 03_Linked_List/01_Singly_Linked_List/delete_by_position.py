@@ -1,12 +1,25 @@
 # delete_by_position.py
+
+# 1. Check for empty list: If the linked list is empty, there's nothing to delete.
+
+# 2. Check if the position is valid: Ensure that the position is within the range of the list (i.e., not negative and less than the size of the list).
+
+# 3 .Delete the node at the position:
+
+    # If the position is 0 (head node), adjust the head to the next node.
+
+    # Otherwise, traverse the list to find the node just before the node to be deleted. Adjust the previous node’s next pointer to skip the node to be deleted, effectively removing it from the list.
+
 from linked_list import SinglyLinkedList
 
 def delete_by_position(ll, position):
     if not ll.head:  # If the list is empty
         print("List is empty, nothing to delete.")
         return
-
-    # If the position to be deleted is the head node
+    
+    # ll.head: This is the current first node in the linked list.  
+    # ll.head.next: This refers to the second node in the list
+    # By setting ll.head = ll.head.next, you are essentially shifting the head of the list to the second node. This makes the second node the new head of the list  
     if position == 0:
         ll.head = ll.head.next
         return
@@ -23,7 +36,9 @@ def delete_by_position(ll, position):
         print(f"Position {position} is out of range.")
         return
 
-    # Delete the node at the specified position
+    # current_node.next: This points to the node that you want to delete
+    # current_node.next.next: This is the node that comes after the one you want to delete.
+    # Setting current_node.next = current_node.next.next skips the node to be deleted by pointing the current node to the node after it, removing the reference to the deleted node.
     current_node.next = current_node.next.next
 
 if __name__ == "__main__":
@@ -39,3 +54,8 @@ if __name__ == "__main__":
     delete_by_position(ll, 1)  # Deleting node at position 1
     print("After deleting node at position 1:")
     ll.print_list()
+
+# Before deletion:
+# 10 -> 20 -> 30 -> 40 -> None
+# After deleting node at position 1:
+# 10 -> 30 -> 40 -> None
