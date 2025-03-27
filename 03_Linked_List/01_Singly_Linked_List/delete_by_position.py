@@ -32,7 +32,8 @@ def delete_by_position(ll, position):
         current_position += 1
 
     # If the position is out of bounds
-    if not current_node or not current_node.next:
+    # When I'm referring to current_node, I mean the pointer/reference to the current node as you traverse the list. This pointer will eventually point to the last node's next, which will be None when you reach the end of the list.
+    if not current_node: 
         print(f"Position {position} is out of range.")
         return
 

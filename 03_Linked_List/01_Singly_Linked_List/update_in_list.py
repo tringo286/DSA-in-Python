@@ -4,9 +4,12 @@ def update_in_list(ll, old_data, new_data):
     current = ll.head  # Start from the head of the list
     while current:  # Traverse the list
         if current.data == old_data:  # If the node with the old data is found
-            current.data = new_data  # Update the node's data           
+            current.data = new_data  # Update the node's data          
+            return 
         current = current.next  # Move to the next node  
 
+    print(f"Data {old_data} not found in the list.")
+    
 # Example usage
 if __name__ == "__main__":
     ll = SinglyLinkedList()

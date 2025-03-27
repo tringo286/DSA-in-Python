@@ -21,6 +21,7 @@ def delete_by_value(ll, value):
         if current_node.next.data == value:
             # Setting current_node.next = current_node.next.next skips the node to be deleted by pointing the current node to the node after it, removing the reference to the deleted node.
             current_node.next = current_node.next.next  
+            return
         current_node = current_node.next
 
     print(f"Value {value} not found in the list.")
