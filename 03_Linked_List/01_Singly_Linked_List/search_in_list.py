@@ -18,9 +18,5 @@ if __name__ == "__main__":
     ll.insert_at_end(20)
     
     # Test the search function
-    search_in_list(ll, 20)  
-    search_in_list(ll, 30) 
-    
-
-# Value 20 in postion 1
-# Value 30 not in the list.
+    search_in_list(ll, 20) # Value 20 in postion 1
+    search_in_list(ll, 30) # Value 30 not in the list.
