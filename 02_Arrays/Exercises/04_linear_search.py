@@ -12,7 +12,7 @@
 # Time Complexity: O(n)
 def search (arr, x):
     for i in arr:
-        if arr[i] == x:
+        if i == x:
             return i
     return -1
 
