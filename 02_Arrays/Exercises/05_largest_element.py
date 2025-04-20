@@ -41,3 +41,9 @@ def largest(arr):
     return findMax(arr, 0)
 
 # Using Library Methods – O(n) Time and O(1) Space
+def largest(arr):
+    return max(arr)
+
+if __name__ == '__main__':
+  arr = [10, 324, 45, 90, 9808]
+  print(largest(arr)) # 9808
