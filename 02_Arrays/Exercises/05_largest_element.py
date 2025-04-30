@@ -4,7 +4,7 @@
 # Input: arr[] = [20, 10, 20, 4, 100]
 # Output: 100
 
-# Iterative Approach – O(n) Time and O(1) Space
+# 1. Iterative Approach – O(n) Time and O(1) Space
 def find_largest(arr):
     max = arr[0]
     for i in arr:
@@ -16,31 +16,20 @@ if __name__ == '__main__':
     arr = [10, 324, 45, 90, 9808]
     print(find_largest(arr)) # 9808
 
-# Recursive Approach – O(n) Time and O(n) Space
+# 2. Recursive Approach – O(n) Time and O(n) Space
 
-def findMax(arr, i):
-  
-    # Last index returns the element
+def findMax(arr, i): # i is the start index
+    # Base case
     if i == len(arr) - 1:
         return arr[i]
 
-    # Find the maximum from the rest of the list
-    recMax = findMax(arr, i + 1)
+    # Recursive case
+    return max(findMax(arr, i + 1), arr[i])
 
-    # Compare with i-th element and return
-    return max(recMax, arr[i])
+arr = [10, 324, 45, 90, 9808, 1]
+print(findMax(arr, 0)) # 9808
 
-def largest(arr):
-    return findMax(arr, 0)
-
-if __name__ == '__main__':
-  arr = [10, 324, 45, 90, 9808, 1]
-  print(largest(arr)) # 9808
-
-def largest(arr):
-    return findMax(arr, 0)
-
-# Using Library Methods – O(n) Time and O(1) Space
+# 3. Using Library Methods – O(n) Time and O(1) Space
 def largest(arr):
     return max(arr)
 

@@ -19,27 +19,28 @@ def get_alternate(arr):
         result.append(arr[i])
     return result
 
-if __name__ == '__main__':
-    arr = [10, 20, 30, 40, 50] 
-    print(get_alternate(arr)) # [10, 30, 50]
+arr = [10, 20, 30, 40, 50] 
+print(get_alternate(arr)) # [10, 30, 50]
 
 # Aproach #2: Recursive approach
 # Time Complexity: O(n), where n is the number of elements in arr[].
 # Auxiliary Space: O(n), for recursive call stack.
 
-def get_alternates_rec(arr, index, res):
-    if index < len(arr):
-        res.append(arr[index])
-        get_alternates_rec(arr, index + 2, res)
+def get_alternates(arr, index=0):
+    if index >= len(arr):
+        return []
+    else:
+        return [arr[index]] + get_alternates(arr, index + 2)
 
-def get_alternates(arr):
-    res = []
-    get_alternates_rec(arr, 0, res)
-    return res
-
-if __name__ == '__main__':
-    arr = [10, 20, 30, 40, 50] 
-    res = get_alternates(arr)
-    # Converts res to a string and joins them into one single string with a space " " between each element
-    print(" ".join(map(str, res))) # 10 30 50
+arr = [10, 20, 30, 40, 50] 
+print(get_alternates(arr)) # [10, 30, 50]
     
+# index = 0: returns [10] + get_alternates(... index=2)
+
+# index = 2: returns [30] + get_alternates(... index=4)
+
+# index = 4: returns [50] + get_alternates(... index=6)
+
+# index = 6: base case hit → returns []
+
+# Final result: [10] + [30] + [50] + [] → [10, 30, 50]

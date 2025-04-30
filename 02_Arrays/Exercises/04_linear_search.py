@@ -16,11 +16,11 @@ def search (arr, x):
             return i
     return -1
 
-if __name__ == '__main__':
-    arr = [1, 2, 3, 4]
-    x = 3
-    result = search(arr, x) # The element is present at index 2
-    if result == - 1:
-        print("The element is not in the array")
-    else:
-        print("The element is present at index", result)
+
+arr = [1, 2, 3, 4]
+x = 3
+result = search(arr, x) # The element is present at index 2
+if result == - 1:
+    print("The element is not in the array")
+else:
+    print("The element is present at index", result)
