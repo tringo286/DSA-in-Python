@@ -76,16 +76,14 @@ print(getSecondLargest2(arr)) # 34
 # Auxiliary space: O(1)
 
 def getSecondLargest3(arr):
-    n = len(arr)
-    largest = -1
-    secondLargest = -1
+    largest = secondLargest = -1
 
-    for i in range(n):
-        if arr[i] > largest:
+    for num in arr:
+        if num > largest:
             secondLargest = largest
-            largest = arr[i]
-        elif arr[i] < largest and arr[i] > secondLargest:
-            secondLargest = arr[i]
+            largest = num
+        elif num != largest and num > secondLargest:
+            secondLargest = num
 
     return secondLargest
 
