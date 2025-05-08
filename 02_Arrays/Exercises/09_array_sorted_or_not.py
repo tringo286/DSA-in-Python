@@ -20,10 +20,10 @@ def arraySortedOrNot(arr):
        return True
 
    for i in range(1, n):
-        if arr[i] >= arr[i-1]:
-            return True
+        if arr[i] < arr[i-1]:
+            return False
       
-   return False
+   return True
 
 arr = [7, 7, 7]
 if (arraySortedOrNot(arr)): # Yes
