@@ -29,3 +29,31 @@ def sub_array(arr):
 arr = [1, 2, 3, 4]
 print("All Non-empty Subarrays:")
 sub_array(arr)
+
+# 2. Recursive Approach
+
+# We use two pointers start and end to maintain the starting and ending point of the array and follow the steps given below: 
+
+# Stop if we have reached the end of the array
+# Increment the end index if start has become greater than end
+# Print the subarray from index start to end and increment the starting index
+
+def printSubArrays(arr, start, end):
+    
+    # Stop if we have reached the end of the array    
+    if end == len(arr):
+        return
+    
+    # Increment the end point and start from 0
+    elif start > end:
+        return printSubArrays(arr, 0, end + 1)
+        
+    # Print the subarray and increment the starting
+    # point
+    else:
+        print(arr[start:end + 1])
+        return printSubArrays(arr, start + 1, end)
+        
+# Driver code
+arr = [1, 2, 3]
+printSubArrays(arr, 0, 0)
