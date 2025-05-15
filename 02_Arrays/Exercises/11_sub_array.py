@@ -10,7 +10,7 @@
 # Input: arr[] = [1, 2]
 # Output: [ [1], [1, 2], [2] ]
 
-# 1. Iterative Approach
+# 1. Iterative Approach - O(n^3)
 
 #Prints all subarrays in arr[0..n-1]
 def sub_array(arr):
@@ -26,11 +26,17 @@ def sub_array(arr):
             print()  # New line after each subarray
 
 # Driver code
-arr = [1, 2, 3, 4]
+arr = [1, 2, 3]
 print("All Non-empty Subarrays:")
-sub_array(arr)
+sub_array(arr) 
+# 1 
+# 1 2 
+# 1 2 3 
+# 2 
+# 2 3 
+# 3 
 
-# 2. Recursive Approach
+# 2. Recursive Approach - O(n^3)
 
 # We use two pointers start and end to maintain the starting and ending point of the array and follow the steps given below: 
 
@@ -57,3 +63,9 @@ def printSubArrays(arr, start, end):
 # Driver code
 arr = [1, 2, 3]
 printSubArrays(arr, 0, 0)
+# [1]
+# [1, 2]
+# [2]
+# [1, 2, 3]
+# [2, 3]
+# [3]
