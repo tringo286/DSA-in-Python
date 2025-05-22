@@ -9,3 +9,16 @@ A string is a sequence of characters. The following facts make string an interes
 ## 1. Basics of Strings:
 
 **intro_to_strings.py**
+
+## 2. Basic Operations of String:
+
+- 1. Length of a String
+- 2. Check if two strings are same
+- 3. Search a Character
+- 4. Insert a Character at a Position
+- 5. Remove a Character at a Position
+- 6. Insert a character at Multiple Positions
+- 7. Remove all occurrences of a character
+- 8. Concatenating Two Strings
+- 9. Reverse a string
+- 10. Generate all Substrings
