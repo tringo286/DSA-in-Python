@@ -20,7 +20,7 @@ def insertChar(s, c, pos):
 s = "Geeks"
 print(insertChar(s, 'A', 3)) # GeeAks
 
-# 2.  Using Custom Method - O(n)
+# 2.  Using Custom Method - O(n)    
 
 # First, iterate through the given string, inserting all the characters into a new string until we reach the position where the given character needs to be inserted. At that position, insert the character, and then append the remaining characters from the input string to the new string.
 
