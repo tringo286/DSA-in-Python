@@ -33,10 +33,11 @@ def insertChar(string, char, position):
 
         newString += string[i]
 
-        if position > len(string):
-            newString += char   
+    if position >= len(string):
+        newString += char   
 
     return newString
 
 s = "Geeks"
 print(insertChar(s, 'A', 3)) # GeeAks
+print(insertChar(s, 'A', 10)) # GeeksA
