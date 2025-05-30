@@ -15,6 +15,9 @@
 
 # Iterate over the string and keep track of the count of the characters in the string so far and whenever your count becomes equal to the element in the array of stars, append a star to the resultant string and move ahead in your star array. 
 
+# Time Complexity: O(n)
+# Auxiliary Space: O(n)
+
 def addStars(s, stars) :
 
     # Create a string ans for storing
@@ -65,7 +68,7 @@ def addStars(s, stars):
 
 str = "geeksforgeeks"
 chars = [1, 5, 7, 9]
-ans = addStars(str, chars)
+ans = addStars(str, chars) # g*eeks*fo*rg*eeks
 
 # Printing the resultant string
 print(ans) # g*eeks*fo*rg*eeks
