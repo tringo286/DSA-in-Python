@@ -29,4 +29,34 @@ def reverseString(s):
 
 s = "abdcfe"
 print(reverseString(s)) # efcdba
-   
+
+# 2. Using Two Pointers - O(n) Time and O(1) Space
+
+# The idea is to maintain two pointers: left and right, such that left points to the beginning of the string and right points to the end of the string. 
+
+# While left pointer is less than the right pointer, swap the characters at these two positions. After each swap, increment the left pointer and decrement the right pointer to move towards the center of the string. This will swap all the characters in the first half with their corresponding character in the second half.
+
+# Python program to reverse a string using two pointers
+
+# Function to reverse a string using two pointers
+
+def reverseString(s):
+    left = 0
+    right = len(s) - 1
+    
+    # Convert string to a list for mutability
+    s = list(s)  
+    
+    # Swap characters from both ends till we reach
+    # the middle of the string
+    while left < right:
+        s[left], s[right] = s[right], s[left]
+        left += 1
+        right -= 1
+    
+    # Convert list back to string
+    return ''.join(s)  
+
+s = "abdcfe"
+print(reverseString(s))
+    
