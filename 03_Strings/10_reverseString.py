@@ -60,3 +60,26 @@ def reverseString(s):
 s = "abdcfe"
 print(reverseString(s))
     
+# 3. Using Stack - O(n) Time and O(n) Space
+
+# The idea is to use stack for reversing a string because Stack follows Last In First Out (LIFO) principle. This means the last character you add is the first one you'll take out. So, when we push all the characters of a string into the stack, the last character becomes the first one to pop. 
+
+def reverseString(s):
+    stack = []
+    
+    # Push the characters into stack
+    for char in s:
+        stack.append(char)
+
+    # Prepare a list to hold the reversed characters
+    rev = [''] * len(s)
+
+    # Pop the characters from stack into the reversed list
+    for i in range(len(s)):
+        rev[i] = stack.pop()
+
+    # Join the list to form the reversed string
+    return ''.join(rev)
+
+s = "abdcfe"
+print(reverseString(s))
