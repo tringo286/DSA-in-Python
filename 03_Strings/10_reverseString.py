@@ -58,7 +58,7 @@ def reverseString(s):
     return ''.join(s)  
 
 s = "abdcfe"
-print(reverseString(s))
+print(reverseString(s)) # efcdba
     
 # 3. Using Stack - O(n) Time and O(n) Space
 
@@ -82,4 +82,15 @@ def reverseString(s):
     return ''.join(rev)
 
 s = "abdcfe"
-print(reverseString(s))
+print(reverseString(s)) # efcdba
+
+# 4. Using Inbuilt methods - O(n) Time and O(1) Space
+
+# Function to reverse a string
+def reverseString(s):
+  	
+    # Reverse the string using slicing
+    return s[::-1]
+
+str = "abdcfe"
+print(reverseString(str)) # efcdba
