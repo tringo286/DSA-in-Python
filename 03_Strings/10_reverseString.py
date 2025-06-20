@@ -94,3 +94,34 @@ def reverseString(s):
 
 str = "abdcfe"
 print(reverseString(str)) # efcdba
+
+# 5. Using Recursion - O(n) Time and O(n) Space
+
+# The idea is to use recursion and define a recursive function that takes a string as input and reverses it. Inside the recursive function, 
+# - Swap the first and last element. 
+# - Recursively call the function with the remaining substring. 
+
+# Python program to reverse a string using Recursion
+
+# Recursive Function to reverse a string
+def reverseStringRec(arr, l, r):
+    if l >= r:
+        return
+
+    # Swap the characters at the ends
+    arr[l], arr[r] = arr[r], arr[l]
+
+    # Recur for the remaining string
+    reverseStringRec(arr, l + 1, r - 1)
+
+def reverseString(s):
+  
+  	# Convert string to list of characters
+    arr = list(s)  
+    reverseStringRec(arr, 0, len(arr) - 1)
+    
+    # Convert list back to string
+    return ''.join(arr)  
+
+s = "abdcfe"
+print(reverseString(s)) # efcdba
