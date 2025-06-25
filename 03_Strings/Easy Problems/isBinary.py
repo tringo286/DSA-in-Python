@@ -23,4 +23,4 @@ def isBinary(s):
     return True
 
 s = "01010101010"
-print("true" if isBinary(s) else "false") # trues
+print("true" if isBinary(s) else "false") # true
