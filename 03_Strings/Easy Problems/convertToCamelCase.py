@@ -15,6 +15,8 @@
 # The idea is to traverse the sentence and each time a space is encountered, remove it and capitalize the next character. We use a flag, capitalizeNext, to track when to capitalize the next character. When a space is encountered, we skip it and set capitalizeNext to true. Once a character is found, we capitalize it and set capitalizeNext back to false.
 
 # Python program to convert given sentence to camel case
+# Time Complexity: O(n), where n is the length of input sentence.
+# Auxiliary Space: O(n), to store the final result.
 
 def convertToCamelCase(s):
     res = []
