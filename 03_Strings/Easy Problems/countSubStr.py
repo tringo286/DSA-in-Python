@@ -46,6 +46,9 @@ print(countSubStr(st, n), end="") # 3
 
 # 2. Count of substrings that start and end with 1 in a given Binary String using Subarray count:
 
+# Time Complexity: O(N), where n is the length of the string.
+# Auxiliary Space: O(1).
+
 # We know that if count of 1's is m, then there will be m * (m - 1) / 2 possible subarrays.
 
 # Follow the steps to solve the problem:
@@ -74,3 +77,46 @@ st = "00100101"
 list(st)
 n = len(st)
 print(countSubStr(st, n), end="") # 3
+# 3. Count of substrings that start and end with 1 in given Binary String using Recursion:
+
+# Time Complexity: O(N), Traversing over the string of size N
+# Auxiliary Space: O(N), for recursion call stack
+
+# This approach is the same as the above approach but here to calculate the count of 1s we use recursion.
+
+# Follow the steps to solve the problem:
+
+# Count the number of 1's using recursion. Let the count of 1's be m. 
+# Return m(m-1)/2 
+
+class GFG :
+    @staticmethod
+    def  helper( n,  str,  i) :
+      
+        # if 'i' is on the last index
+        if (i == n - 1) :
+            return 1 if (str[i] == '1') else 0
+          
+        # if current char is 1
+        # add 1 to the answer
+        if (str[i] == '1') :
+            return 1 + GFG.helper(n, str, i + 1)
+        else :
+            return GFG.helper(n, str, i + 1)
+    @staticmethod
+    def  countSubStr( str) :
+        n = len(str)
+        
+        # counting the number of 1's in the string
+        count = GFG.helper(n, str, 0)
+        
+        # return the number of combinations
+        return int((count * (count - 1)) / 2)
+    @staticmethod
+    def main( args) :
+        str = list("00100101")
+        print(GFG.countSubStr(str))
+    
+
+if __name__=="__main__":
+    GFG.main([]) # 3
