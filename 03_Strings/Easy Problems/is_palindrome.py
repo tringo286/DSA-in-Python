@@ -60,3 +60,19 @@ def is_palindrome(s):
 # Driver code
 s = "abba"
 print(is_palindrome(s)) # 1
+
+# 3. By Reversing String - O(n) time and O(n) space
+
+# According to the definition of a palindrome, a string reads the same both forwards and backwards. So, we can use this idea and compare the reversed string with the original one.
+
+# If they are the same, the string is a palindrome, and then returns 1.
+# If they are different, then returns 0, meaning it's not a palindrome.
+
+def is_palindrome(s):
+  
+    #If reverse string is equal to given string,
+    # then it is palindrome.
+    return 1 if s == s[::-1] else 0
+
+s = "abba"
+print(is_palindrome(s)) # 1
