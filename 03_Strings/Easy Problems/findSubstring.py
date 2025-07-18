@@ -38,3 +38,20 @@ def findSubstring(txt, pat):
 txt = "geeksforgeeks"
 pat = "eks"
 print(findSubstring(txt, pat)) # 2
+
+# 2. Using in-built library functions
+
+# This approach uses a built-in function to quickly check if pattern is part of text or not. This makes the process simple and efficient.
+
+# Python program to check if a string is substring of other
+# using in-built functions
+
+txt = "geeksforgeeks"
+pat = "eks"
+
+# If pat is found, returns the index of first
+# occurrence of pat. Otherwise, returns a special
+# constant value -1
+idx = txt.find(pat)
+
+print(idx) # 2
