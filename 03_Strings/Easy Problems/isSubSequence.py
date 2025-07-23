@@ -16,6 +16,9 @@
 
 # 1. Iterative Solution
 
+# Time Complexity: O(n)
+# Auxiliary Space: O(1)
+
 # The idea is to use two pointers, one pointer will start from start of s1 and another will start from start of s2. If current character on both the indexes are same then increment both pointers otherwise increment the pointer which is pointing s2.
 
 # Follow the steps below to solve the problem:
@@ -45,5 +48,40 @@ if (issubsequence(s1, s2)):
     print("gksrek is subsequence of geekforgeeks")
 else:
     print("gksrek is not a subsequence of geekforgeeks")
+
+# Yes 
+
+# 2. Using Recursion:
+
+# Time Complexity: O(n), The recursion will call at most n times.
+# Auxiliary Space: O(n) for recursion call stack.
+
+# We match last characters of the two strings s1 and s2 of lengths m and n
+
+# If the last characters match, we call for m-1 and n-1
+# Otherwise, we ignore the last character of s2 and therefore call for m and n-1.
+
+def isSubSequence(string1, string2, m, n):
+    # Base Cases
+    if m == 0:
+        return True
+    if n == 0:
+        return False
+
+    # If last characters of two
+    # strings are matching
+    if string1[m-1] == string2[n-1]:
+        return isSubSequence(string1, string2, m-1, n-1)
+
+    # If last characters are not matching
+    return isSubSequence(string1, string2, m, n-1)
+
+string1 = "gksrek"
+string2 = "geeksforgeeks"
+
+if isSubSequence(string1, string2, len(string1), len(string2)):
+    print("Yes")
+else:
+    print("No")
 
 # Yes 
