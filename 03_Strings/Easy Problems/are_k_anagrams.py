@@ -51,3 +51,51 @@ else:
     print("No")
 
 # Yes 
+
+# [Approach - 2] Using Two Hash Tables - O(n) Time and O(1) Space
+
+# The idea is to create separate frequency counts for both strings. Count the total differences in character occurrences, considering even slight mismatches (e.g., one string has 4 'a's and the other has 3, counted as a difference). If the total difference is ≤ K, return true; otherwise, return false.
+
+# Python3 program to check if two 
+# strings are k anagram or not.
+MAX_CHAR = 26
+
+def arekAnagrams(str1, str2, k) :
+
+    n = len(str1)
+    if (len(str2)!= n) :
+        return False
+
+    count1 = [0] * MAX_CHAR 
+    count2 = [0] * MAX_CHAR
+
+    for i in range(n): 
+        count1[ord(str1[i]) - 
+               ord('a')] += 1
+    for i in range(n): 
+        count2[ord(str2[i]) - 
+               ord('a')] += 1
+        
+    count = 0
+
+    # Count number of characters that
+    # are different in both strings 
+    for i in range(MAX_CHAR):
+        if (count1[i] < count2[i]) :
+            count = count + abs(count1[i] - 
+                                count2[i]) 
+
+    # Return true if count is less
+    # than or equal to k 
+    return (count <= k) 
+
+if __name__ == '__main__':
+    str1 = "anagram"
+    str2 = "grammar"
+    k = 2
+    if (arekAnagrams(str1, str2, k)): 
+        print("Yes") 
+    else:
+        print("No")
+
+# Yes 
