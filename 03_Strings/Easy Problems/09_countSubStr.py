@@ -1,4 +1,5 @@
 # Count of substrings that start and end with 1 in given Binary String
+
 # Given a binary string, count the number of substrings that start and end with 1. 
 
 # Examples:
