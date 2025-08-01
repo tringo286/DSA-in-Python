@@ -50,3 +50,44 @@ if __name__ == "__main__":
     print(longestSubstring(s))
 
 # 6
+
+# 2. [Expected Approach] Using Hashing - O(n) Time and O(1) Space
+
+# The idea is to efficiently track the first occurrence of each character using hashing so we avoid nested loops. The thought process is that if a character repeats, the substring length between its first and last occurrence can be easily calculated. By storing the first index in a map, whenever a character repeats, we update the answer using the difference between current and stored index. 
+
+# Steps to implement the above idea:
+
+# Create a map to store the first occurrence index of each character in the string.
+# Initialize a variable to keep track of the maximum length found between repeating characters.
+# Loop through the string, checking each character's presence in the map.
+# If the character is not in the map, store its current index as the first occurrence.
+# If it already exists, calculate the length between current and first index, excluding the matching characters.
+# Update the maximum length whenever a longer valid substring is found.
+# Return the maximum length, or -1 if no repeating characters are found.
+
+# Python program to find the length of the longest substring
+# between two identical characters using Hashing
+
+# Function to return the length of the 
+# longest valid substring
+def longestSubstring(s):
+
+    firstIndex = {}
+    maxLen = -1
+
+    # Traverse the string
+    for i in range(len(s)):
+
+        # If first occurrence of character, store its index
+        if s[i] not in firstIndex:
+            firstIndex[s[i]] = i
+
+        # If character seen before, update maxLen
+        else:
+            maxLen = max(maxLen, i - firstIndex[s[i]] - 1)
+
+    return maxLen
+
+s = "accabbacc"
+
+print(longestSubstring(s)) # 6
