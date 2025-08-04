@@ -117,3 +117,60 @@ find_smallest_largest_words_regex(input_str)
 
 # Minimum length word: a
 # Maximum length word: string
+
+# Method 3: Using Stack
+
+# In this approach, we will push all the words one by one into a char stack and check for the max as well as min length for every word on the basis of that we will print the Minimum length word and Maximum length word.
+
+# Time complexity: O(n), n is length of string.
+# Auxiliary Space: O(m), m is the length of the longest word.
+
+def smallest_and_largest_word(string):
+    # Variables to store the smallest and largest words
+    min_word = ""
+    max_word = ""
+    # Temporary variable to store each word
+    temp = ""
+    # Loop through the characters of the string
+    i = 0
+    while i < len(string):
+        if string[i] != ' ':
+            # Push characters onto the stack until a space is encountered
+            temp += string[i]
+        else:
+            # When a space is encountered, compare the length of the current word
+            # with the smallest and largest words found so far
+            if min_word == "" or len(temp) < len(min_word):
+                min_word = temp
+            if max_word == "" or len(temp) > len(max_word):
+                max_word = temp
+            # Reset the temporary variable for the next word
+            temp = ""
+        i += 1
+
+    # Compare the length of the last word with the smallest and largest words found so far
+    if min_word == "" or len(temp) < len(min_word):
+        min_word = temp
+    if max_word == "" or len(temp) > len(max_word):
+        max_word = temp
+
+    # Store the smallest and largest words
+    return min_word, max_word
+
+# Main function
+
+
+def main():
+    string = "GeeksforGeeks A computer Science portal for Geeks"
+    # Call the function to find the smallest and largest words
+    min_word, max_word = smallest_and_largest_word(string)
+    # Print the results
+    print("Minimum length word:", min_word)
+    print("Maximum length word:", max_word)
+
+
+if __name__ == "__main__":
+    main()
+
+# Minimum length word: A
+# Maximum length word: GeeksforGeeks
