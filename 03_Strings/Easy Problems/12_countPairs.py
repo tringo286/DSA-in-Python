@@ -1,4 +1,5 @@
 # Count number of equal pairs in a string
+
 # Given a string s, find the number of pairs of characters that are same. Pairs (s[i], s[j]), (s[j], s[i]), (s[i], s[i]), (s[j], s[j]) should be considered different. 
 
 # Examples :
@@ -44,4 +45,36 @@ def countPairs(s):
 
 s = "geeksforgeeks"
 print(countPairs(s)) # 31
+
+# 2. Efficient approach
+
+# For an efficient approach, we need to count the number of equal pairs in linear time. Since pairs (x, y) and pairs (y, x) are considered different. We need to use a hash table to store the count of all occurrences of a character.So we know if a character occurs twice, then it will have 4 pairs - (i, i), (j, j), (i, j), (j, i). So using a hash function, store the occurrence of each character, then for each character the number of pairs will be occurrence^2. Hash table will be 256 in length as we have 256 characters. 
+
+# Python3 program to count the 
+# number of pairs 
+MAX = 256
+
+# Function to count the number 
+# of equal pairs
+def countPairs(s):
     
+    # Hash table 
+    cnt = [0 for i in range(0, MAX)]
+
+    # Traverse the string and count 
+    # occurrence 
+    for i in range(len(s)):
+        cnt[ord(s[i]) - 97] += 1
+
+    # Stores the answer 
+    ans = 0
+
+    # Traverse and check the occurrence 
+    # of every character 
+    for i in range(0, MAX):
+        ans += cnt[i] * cnt[i]
+
+    return ans
+
+s = "geeksforgeeks"
+print(countPairs(s)) # 31    
