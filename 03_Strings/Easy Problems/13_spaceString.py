@@ -82,3 +82,5 @@ printPattern(string)
 # A BC D
 # A B CD
 # A B C D
+
+# 2. 
