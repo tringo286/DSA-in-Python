@@ -54,5 +54,39 @@ def modifyString(s):
 s = "geeksforgeeks"
 print(modifyString(s)) # g2 e4 k2 s2 f1 o1 r1 
 
+# 2. [Expected Approach 1] Use Hash Map or Dictionary - O(n) Time and O(MAX_CHAR) Space
 
+# 1) Store Frequencies of all characters in a map.
+# 2) Traverse through the string, append the character and its frequency to the result and make frequency as 0 to avoid repetition.
 
+# Note the MAX_CHAR is alphabet size of input characters which is typically a constant. If we have only lower case characters, then MAX_CHAR is 26 only. If we consider all ASCII characters, then MAX_CHAR is 256.
+
+# Python Code to find character frequencies in order of
+# occurrence using Hash Map
+def modifyString(str):
+
+    # Store all characters and their frequencies
+    # in dictionary
+    d = {}
+    for i in str:
+        if i in d:
+            d[i] += 1
+        else:
+            d[i] = 1
+    
+    # Print characters and their frequencies in
+    # same order of their appearance
+    for i in str:
+
+        # Print only if this character is not printed
+        # before.  
+        if d[i] != 0:
+            print("{}{}".format(i,d[i]), end =" ")
+            d[i] = 0
+     
+if __name__ == "__main__" :
+    
+    str = "geeksforgeeks"
+    modifyString(str)
+
+# g2 e4 k2 s2 f1 o1 r1 
