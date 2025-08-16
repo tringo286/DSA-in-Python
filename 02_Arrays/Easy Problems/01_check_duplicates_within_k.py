@@ -39,3 +39,49 @@ def check_duplicates_within_k(arr, k):
 # Driver method to test above method
 arr = [10, 5, 3, 4, 3, 5, 6]
 print("Yes" if check_duplicates_within_k(arr, 3) else "No") # Yes
+
+# 2. [Expected Approach] - Using HashSet - O(n) Time and O(k) Space
+
+# The idea is to use HashSet to store elements of the array arr[] and check if there is any duplicate present within a k distance. Also remove elements that are present at more than k distance from the current element. Following is a detailed algorithm.
+
+# Create an empty HashSet. 
+# Traverse all elements from left to right. Let the current element be 'arr[i]' 
+# If the current element 'arr[i]' is present in a HashSet, then return true. 
+# Else add arr[i] to hash and remove arr[i-k] from hash if i >= k
+
+
+# Python 3 program to Check if a given array 
+# contains duplicate elements within k distance
+# from each other 
+def checkDuplicatesWithinK(arr, n, k):
+
+    # Creates an empty list
+    myset = set()
+
+    # Traverse the input array
+    for i in range(n):
+    
+        # If already present n hash, then we 
+        # found a duplicate within k distance
+        if arr[i] in myset:
+            return True
+
+        # Add this item to hashset
+        myset.add(arr[i])
+
+        # Remove the k+1 distant item
+        if (i >= k):
+            myset.remove(arr[i - k])
+    return False
+
+# Driver Code
+if __name__ == "__main__":
+    
+    arr = [10, 5, 3, 4, 3, 5, 6]
+    n = len(arr)
+    if (checkDuplicatesWithinK(arr, n, 3)):
+        print("Yes")
+    else:
+        print("No")
+
+# Yes 
