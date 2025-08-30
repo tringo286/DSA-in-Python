@@ -43,3 +43,42 @@ def maximumProfit(prices):
 if __name__ == "__main__":
     prices = [100, 180, 260, 310, 40, 535, 695]
     print(maximumProfit(prices)) # 865 
+
+# 2. [Better Approach] Local Minima and Maxima - O(n) Time and O(1) Space
+
+# When the prices are going down, we do not do anything and let the prices go down. When the prices reach a local minimum value (a value after which the prices go up), we buy the stock. When the prices are going up, we let the prices go up and once the prices reach a local maxima, we sell the stock.
+
+# The idea is to traverse the array from left to right and do following.
+
+# Find local minima and then a local maxima.
+# Compute the difference between two and add to the result.
+
+# Function to calculate the maximum profit
+def maximumProfit(prices):
+    n = len(prices)
+    lMin = prices[0]  # Local Minima
+    lMax = prices[0]  # Local Maxima
+    res = 0
+  
+    i = 0
+    while i < n - 1:
+      
+        # Find local minima
+        while i < n - 1 and prices[i] >= prices[i + 1]:
+            i += 1
+        lMin = prices[i]
+        
+        # Local Maxima
+        while i < n - 1 and prices[i] <= prices[i + 1]:
+            i += 1
+        lMax = prices[i]
+      
+        # Add current profit
+        res += (lMax - lMin)
+  
+    return res
+
+# Driver Code
+if __name__ == "__main__":
+    prices = [100, 180, 260, 310, 40, 535, 695]
+    print(maximumProfit(prices)) # 865
