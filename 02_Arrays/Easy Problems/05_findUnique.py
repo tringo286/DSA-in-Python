@@ -68,4 +68,21 @@ def findUnique(arr):
     return -1
 
 arr = [2, 3, 5, 4, 5, 3, 4]
-print(findUnique(arr)) # 2
+print(findUnique(arr)) # 2  
+
+# 3. [Expected Approach] Using XOR Operation - O(n) Time and O(1) Space
+
+# This approach uses the XOR operation to find the unique element in an array where every other element appears twice. XOR of two identical numbers cancels them out (results in zero), so after XORing all the elements, only the element that appears once will remain. 
+
+def findUnique(arr):
+    res = 0
+    
+    # Find XOR of all elements
+    for num in arr:
+        res ^= num
+    
+    return res
+
+if __name__ == '__main__':
+    arr = [2, 3, 5, 4, 5, 3, 4]
+    print(findUnique(arr)) # 2
