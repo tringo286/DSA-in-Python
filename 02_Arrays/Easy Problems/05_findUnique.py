@@ -41,3 +41,31 @@ def findUnique(arr):
 if __name__ == "__main__":
     arr = [2, 3, 5, 4, 5, 3, 4]
     print(findUnique(arr))
+
+#2. [Better Approach] Using Hash Map - O(n) Time and O(n) Space 
+
+# This approach uses a hash map (or dictionary) to track the frequency of each element in the array. First, we iterate through the array to record how many times each element appears. Then, we scan the hash map to find the element that appears exactly once. If such an element is found, it is returned; otherwise, the function returns -1. This method efficiently solves the problem in linear time with a linear space complexity.
+
+# Step by step approach:
+
+# Traverse all elements and insert them into a hash table. Element is used as key and the frequency is used as the value in the hash table. 
+# Iterate through the map and return the value with count equal to 1.
+
+def findUnique(arr):
+    # Dictionary to store the count of each element
+    cnt = {}
+
+    # Store frequency of each element
+    for num in arr:
+        cnt[num] = cnt.get(num, 0) + 1
+
+    # Return the value with count = 1
+    for key, value in cnt.items():
+        if value == 1:
+            return key
+
+    # If no element exists that appears only once
+    return -1
+
+arr = [2, 3, 5, 4, 5, 3, 4]
+print(findUnique(arr)) # 2
