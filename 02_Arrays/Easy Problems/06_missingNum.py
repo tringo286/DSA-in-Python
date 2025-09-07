@@ -36,3 +36,28 @@ def missingNum(arr):
 if __name__ == '__main__':
     arr = [8, 2, 4, 5, 3, 7, 1]
     print(missingNum(arr)) # 6
+
+# 2. [Better Approach] Using Hashing - O(n) Time and O(n) Space
+
+# This approach uses a hash array (or frequency array) to track the presence of each number from 1 to n in the input array. It first initializes a hash array to store the frequency of each element. Then, it iterates through the hash array to find the number that is missing (i.e., the one with a frequency of 0).
+
+def missingNum(arr):
+    n = len(arr) + 1
+
+    # Create hash array of size n+1
+    hash = [0] * (n + 1)
+
+    # Store frequencies of elements
+    for i in range(n - 1):
+        hash[arr[i]] += 1
+
+    # Find the missing number
+    for i in range(1, n + 1):
+        if hash[i] == 0:
+            return i
+    return -1
+
+if __name__ == '__main__':
+    arr = [8, 2, 4, 5, 3, 7, 1]
+    res = missingNum(arr)
+    print(res) # 6 
