@@ -42,3 +42,30 @@ if __name__ == "__main__":
     result = solution.twoSum(nums, target)
 
     print("Output:", result) # Output: [2, 7]
+
+# 2. Two-pass Hash Table
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        numMap = {}
+        n = len(nums)
+
+        # Build the hash table
+        for i in range(n):
+            numMap[nums[i]] = i
+
+        # Find the complement
+        for i in range(n):
+            complement = target - nums[i]
+            if complement in numMap and numMap[complement] != i:
+                return [nums[i], nums[numMap[complement]]]
+
+        return []  # No solution found
+
+if __name__ == "__main__":
+    nums = [2, 7, 11, 15]
+    target = 9
+
+    solution = Solution()
+    result = solution.twoSum(nums, target)
+
+    print("Output:", result)  # Output: [2, 7]
